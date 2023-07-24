@@ -55,6 +55,7 @@ function CarParkDetail() {
             alert("차량 번호가 유효하지 않습니다!"); // The car's number is not valid
         }
         else {
+            login();
             console.log(getCurrentDate()); //
             parkingDate = getCurrentDate();
             parkingTime = getCurrentTime();
@@ -86,6 +87,28 @@ function CarParkDetail() {
                 console.error("주차 오류 : ", error + "!!"); // Error in parking Car
             });
         }
+    }
+
+    function login () {
+        Axios.post("https://tcp.parking.kakao.com/tenant/login", {"tenant":{"username":"newseoulphil","password":"123456789a!"}})
+            .then((response)=>{
+
+                console.log('Login Response : ', response); //
+                if(response.status == 200) {
+                    if(response.data.length != 0) {
+                        console.log('Login Success!')
+                        console.log('Login response header : ', response.headers)
+                        console.log('Authorization Key : ', response.config.headers.Authorization)
+                        console.log('Login Response data : ', response.data)
+                    }else{
+                        alert('로그인 오류!'); //Login Not Successful
+                        process.exit();
+                    }
+                }else{
+                    alert('Some Technical Error Occured!');
+                    process.exit();
+                }
+        })
     }
 
     const getAuth = () => {
