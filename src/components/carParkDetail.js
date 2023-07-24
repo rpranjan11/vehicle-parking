@@ -353,19 +353,19 @@ function CarParkDetail() {
           <div className="row form-body" >
                 <div className="row col-5 d-flex justify-content-center text-white">
                     <label className="form__label" htmlFor="name">이름 </label>
-                    <input className="form__input" type="text" id="name" value={name} onChange = {(e) => handleInputChange(e)} placeholder="이름" required/>
+                    <input className="form__input" type="text" id="name" value={name} onChange = {(e) => handleInputChange(e)} placeholder="이름" />
                 </div>
                 <div className="row col-5 d-flex justify-content-center text-white">
                     <label className="form__label" htmlFor="phone">전화번호 </label>
-                    <input className="form__input" type="number" id="phone" value={phone} onChange = {(e) => handleInputChange(e)} placeholder="전화번호" required/>
+                    <input className="form__input" type="number" id="phone" value={phone} onChange = {(e) => handleInputChange(e)} placeholder="전화번호" />
                 </div>
                 <div className="row col-5 d-flex justify-content-center text-white">
                     <label className="form__label" htmlFor="totalTicket" style={{'fontSize':'28px'}} >총 주차권 수 </label>
-                    <input className="form__input" type="number"  id="totalTicket" value={totalTicket} onChange = {(e) => handleInputChange(e)} placeholder="총 주차권 수 (<=2)" min='1' max='2' required/>
+                    <input className="form__input" type="number"  id="totalTicket" value={totalTicket} onChange = {(e) => handleInputChange(e)} placeholder="총 주차권 수 (<=2)" min='1' max='2' />
                 </div>
                 <div className="row col-5 d-flex justify-content-center text-white">
                     <label className="form__label" htmlFor="carNumber">차량번호 </label>
-                    <input className="form__input" type="text" id="carNumber" value={carNumber} onChange = {(e) => handleInputChange(e)} placeholder="차량번호" required/>
+                    <input className="form__input" type="text" id="carNumber" value={carNumber} onChange = {(e) => handleInputChange(e)} placeholder="차량번호" />
                 </div>
                 <div className="row col-5 d-flex justify-content-center text-white">
                     <label className="form__label" htmlFor="etc">비고 </label>
